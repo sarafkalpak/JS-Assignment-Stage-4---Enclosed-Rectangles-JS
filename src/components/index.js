@@ -19,4 +19,32 @@ function updateStructure(rec1,rec2){
 	}
 }
 
+function relative(recA, recB){
+	const recAn = normalize(recA);
+	const recBn = normalize(recB);
+
+	const res = {
+		children: recB.children
+	}
+	if(recB.top){
+		res.top = `${recBn.x1 - recAn.x1}px`;
+	}
+	if(recB.left){
+		res.left = `${recBn.y1 - recAn.y1}px`;
+	}
+	if(recB.height){
+		res.height = recB.height;
+	}
+	if(recB.width){
+		res.width = recB.width;
+	}
+	if(recB.bottom){
+		res.bottom = `${recAn.x2 - recBn.x2}px`;
+	}
+	if(recB.right){
+		res.right = `${recAn.y2 - recBn.y2}px`;
+	}
+	return res;
+}
+
 module.exports = updateStructure;
