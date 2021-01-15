@@ -19,33 +19,33 @@ function updateStructure(rec1,rec2){
 	}
 }
 
-// function relative(rec1, rec2){
-// 	const recAn = normalize(rec1);
-// 	const recBn = normalize(rec2);
+function relative(rec1, rec2){
+	const recAn = normalize(rec1);
+	const recBn = normalize(rec2);
 
-// 	const res = {
-// 		children: rec2.children
-// 	}
-// 	if(rec2.top){
-// 		res.top = `${recBn.x1 - recAn.x1}px`;
-// 	}
-// 	if(rec2.left){
-// 		res.left = `${recBn.y1 - recAn.y1}px`;
-// 	}
-// 	if(rec2.height){
-// 		res.height = rec2.height;
-// 	}
-// 	if(rec2.width){
-// 		res.width = rec2.width;
-// 	}
-// 	if(rec2.bottom){
-// 		res.bottom = `${recAn.x2 - recBn.x2}px`;
-// 	}
-// 	if(rec2.right){
-// 		res.right = `${recAn.y2 - recBn.y2}px`;
-// 	}
-// 	return res;
-// }
+	const res = {
+		children: rec2.children
+	}
+	if(rec2.top){
+		res.top = `${recBn.x1 - recAn.x1}px`;
+	}
+	if(rec1.left){
+		res.left = `${recBn.y1 - recAn.y1}px`;
+	}
+	if(rec1.height){
+		res.height = rec2.height;
+	}
+	if(rec1.width){
+		res.width = rec2.width;
+	}
+	if(rec1.bottom){
+		res.bottom = `${recAn.x2 - recBn.x2}px`;
+	}
+	if(rec1.right){
+		res.right = `${recAn.y2 - recBn.y2}px`;
+	}
+	return res;
+}
 
 function contains(rec1, rec2){
 	const recAn = normalize(rec1);
