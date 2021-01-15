@@ -26,17 +26,17 @@ function relative(rec1, rec2){
 	const res = {
 		children: rec2.children
 	}
-	if(rec2.top){
+	if(rec1.top){
 		res.top = `${recBn.x1 - recAn.x1}px`;
 	}
 	if(rec1.left){
 		res.left = `${recBn.y1 - recAn.y1}px`;
 	}
 	if(rec1.height){
-		res.height = rec2.height;
+		res.height = rec1.height;
 	}
 	if(rec1.width){
-		res.width = rec2.width;
+		res.width = rec1.width;
 	}
 	if(rec1.bottom){
 		res.bottom = `${recAn.x2 - recBn.x2}px`;
